@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # 构建生产环境下的 Vue 项目
-RUN npm run build
+RUN npm run build:pro
 
 # 暴露容器的端口号，如果有需要的话
 EXPOSE 7078
