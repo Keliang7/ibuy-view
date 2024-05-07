@@ -9,6 +9,7 @@ COPY package*.json ./
 
 # 安装依赖
 RUN npm install
+RUN npm install pnpm@8.1.0 -g
 
 # 拷贝所有文件到工作目录
 COPY . .
