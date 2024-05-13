@@ -1,14 +1,5 @@
 stages:
   - build
-  - deploy
-
-variables:
-  SOFT_VERSION: $SOFT_VERSION
-  DOCK_HUB: 47.115.226.89:8443
-  DOCK_HUB_USER: admin
-  DOCK_HUB_PASSWD: 'LAq1234567'
-  HUB_GROUP_PASSWD: 1234QWERasdf
-  LAY_OUT_URL: ${DOCK_HUB}/harbor/projects
 
 services:
   - docker:19.03.12-dind
@@ -19,13 +10,3 @@ build:
   stage: build
   script:
     - docker build -t my-vue-app .
-    - docker login -u ${DOCK_HUB_USER} -p ${DOCK_HUB_PASSWD} ${DOCK_HUB}
-    - docker tag my-vue-app ${LAY_OUT_URL}/my-vue-app:latest
-    - docker push ${LAY_OUT_URL}/my-vue-app:latest
-
-deploy:
-  stage: deploy
-  tags:
-    - build
-  script:
-    - echo "Deploying..."
