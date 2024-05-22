@@ -17,8 +17,10 @@ COPY . .
 # 构建生产环境下的 Vue 项目
 RUN npm run build:pro
 
-# 暴露容器的端口号，如果有需要的话
-EXPOSE 7078
-
 # 启动 Vue 项目，这里假设使用的是 http-server 作为静态服务器
-CMD ["npm", "run", "serve"]
+FROM nginx
+COPY scripts/nginx/api_proxy.conf /etc/nginx/conf.d/api_proxy.conf
+COPY --from=build-stage /app/dist-pro /usr/share/nginx/html
+
+EXPOSE 7070
+CMD ["nginx", "-g", "daemon off;"]
