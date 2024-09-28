@@ -44,7 +44,7 @@ const adminList = [
     name: 'ClassificationManagement',
     meta: {
       title: 'router.classificationManagement',
-      icon: 'ant-design:dashboard-filled',
+      icon: 'ep:collection',
       alwaysShow: true
     },
     children: [
@@ -53,9 +53,7 @@ const adminList = [
         component: 'views/ClassificationManagement/ClassificationManagement',
         name: 'ClassificationManagement',
         meta: {
-          title: 'router.classificationManagement',
-          noCache: true,
-          affix: true
+          title: 'router.classificationManagement'
         }
       }
     ]
@@ -66,7 +64,7 @@ const adminList = [
     name: 'GoodsManagement',
     meta: {
       title: 'router.goodsManagement',
-      icon: 'ant-design:dashboard-filled',
+      icon: 'ep:goods',
       alwaysShow: true
     },
     children: [
@@ -75,9 +73,7 @@ const adminList = [
         component: 'views/GoodsManagement/GoodsManagement',
         name: 'GoodsManagement',
         meta: {
-          title: 'router.goodsManagement',
-          noCache: true,
-          affix: true
+          title: 'router.goodsManagement'
         }
       },
       {
@@ -85,9 +81,7 @@ const adminList = [
         component: 'views/GoodsManagement/GoodsOption',
         name: 'GoodsOption',
         meta: {
-          title: '商品规格',
-          noCache: true,
-          affix: true
+          title: '商品规格'
         }
       }
     ]
@@ -98,7 +92,7 @@ const adminList = [
     name: 'OrderManagement',
     meta: {
       title: 'router.orderManagement',
-      icon: 'ant-design:dashboard-filled',
+      icon: 'ep:document',
       alwaysShow: true
     },
     children: [
@@ -107,9 +101,7 @@ const adminList = [
         component: 'views/OrderManagement/Order',
         name: 'Order',
         meta: {
-          title: 'router.orderManagement',
-          noCache: true,
-          affix: true
+          title: 'router.orderManagement'
         }
       },
       {
@@ -117,9 +109,7 @@ const adminList = [
         component: 'views/OrderManagement/OrderDetail',
         name: 'OrderDetail',
         meta: {
-          title: '订单详情',
-          noCache: true,
-          affix: true
+          title: '订单详情'
         }
       }
     ]
@@ -130,7 +120,7 @@ const adminList = [
     name: 'UserManagement',
     meta: {
       title: 'router.userManagement',
-      icon: 'ant-design:dashboard-filled',
+      icon: 'ep:user',
       alwaysShow: true
     },
     children: [
@@ -139,9 +129,7 @@ const adminList = [
         component: 'views/UserManagement/UserManagement',
         name: 'UserManagement',
         meta: {
-          title: 'router.userManagement',
-          noCache: true,
-          affix: true
+          title: 'router.userManagement'
         }
       },
       {
@@ -149,9 +137,7 @@ const adminList = [
         component: 'views/UserManagement/UserAddress',
         name: 'userAddress',
         meta: {
-          title: '收货地址管理',
-          noCache: true,
-          affix: true
+          title: '收货地址管理'
         }
       }
     ]
@@ -162,7 +148,7 @@ const adminList = [
     name: 'RoleManagement',
     meta: {
       title: 'router.roleManagement',
-      icon: 'ant-design:dashboard-filled',
+      icon: 'ant-design:team-outlined',
       alwaysShow: true
     },
     children: [
@@ -171,9 +157,7 @@ const adminList = [
         component: 'views/RoleManagement/RoleManagement',
         name: 'RoleManagement',
         meta: {
-          title: 'router.roleManagement',
-          noCache: true,
-          affix: true
+          title: 'router.roleManagement'
         }
       }
     ]
@@ -184,7 +168,7 @@ const adminList = [
     name: 'PermissionManagement',
     meta: {
       title: 'router.permissionManagement',
-      icon: 'ant-design:dashboard-filled',
+      icon: 'ep:key',
       alwaysShow: true
     },
     children: [
@@ -193,9 +177,7 @@ const adminList = [
         component: 'views/PermissionManagement/PermissionManagement',
         name: 'PermissionManagement',
         meta: {
-          title: 'router.permissionManagement',
-          noCache: true,
-          affix: true
+          title: 'router.permissionManagement'
         }
       }
     ]
@@ -206,7 +188,7 @@ const adminList = [
     name: 'ShoppingCar',
     meta: {
       title: '购物车管理',
-      icon: 'ant-design:dashboard-filled',
+      icon: 'ep:shopping-cart',
       alwaysShow: true
     },
     children: [
@@ -215,9 +197,7 @@ const adminList = [
         component: 'views/ShoppingCar/ShoppingCar',
         name: 'ShoppingCar',
         meta: {
-          title: '购物车',
-          noCache: true,
-          affix: true
+          title: '购物车'
         }
       }
     ]
@@ -228,7 +208,7 @@ const adminList = [
     name: 'CommentManagement',
     meta: {
       title: '商品评论管理',
-      icon: 'ant-design:dashboard-filled',
+      icon: 'ep:comment',
       alwaysShow: true
     },
     children: [
@@ -237,9 +217,7 @@ const adminList = [
         component: 'views/CommentManagement/Comment',
         name: 'Comment',
         meta: {
-          title: '商品评论',
-          noCache: true,
-          affix: true
+          title: '商品评论'
         }
       }
     ]

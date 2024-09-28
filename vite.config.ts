@@ -140,12 +140,8 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     server: {
       port: 7070,
       proxy: {
-        '/api/v1/sm': {
-          target: 'http://172.16.20.30:32080',
-          changeOrigin: true
-        },
         '/api': {
-          target: 'http://0.0.0.0:3000',
+          target: 'http://localhost:3000',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, '')
         }
