@@ -390,18 +390,20 @@ export default defineComponent({
       })
     }
 
-    const renderPreview = (url: string, field: string) => {
+    const renderPreview = (url, field: string) => {
       const { imagePreview, videoPreview } = unref(getProps)
       return (
         <div class="flex items-center">
           {imagePreview.includes(field) ? (
             <>
               <ElImage
-                src={typeof url === 'string' ? url : url[0]}
+                src={'api' + (typeof url === 'string' ? url : url[0])}
                 fit="cover"
                 class="w-[100%]"
                 lazy
-                preview-src-list={typeof url === 'string' ? [url] : url}
+                preview-src-list={
+                  typeof url === 'string' ? ['api' + url] : url.map((item) => 'api' + item)
+                }
                 preview-teleported
               />
               <div class="text-gray" style={typeof url === 'string' ? 'display:none;' : ''}>

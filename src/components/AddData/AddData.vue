@@ -92,7 +92,7 @@ const schema = ref<FormSchema[]>([
   }
 ])
 //抽屉打开关闭
-const emit = defineEmits(['update:isDrawer'])
+const emit = defineEmits(['update:isDrawer', 'get-list'])
 const close = async () => {
   console.log('关闭弹窗')
   const elFormExpose = await getElFormExpose()
@@ -121,10 +121,10 @@ const confirmClick = async () => {
     if (isValid) {
       const formData = await getFormData()
       const res = await addApi({ avatar: base64, ...formData })
-      console.log(formData)
       if (res.code == 0) {
         close()
         ElMessage.success('添加信息成功')
+        emit('get-list')
       }
     }
   })

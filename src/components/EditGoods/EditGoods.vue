@@ -103,6 +103,7 @@ const close = async () => {
   emit('update:isDrawer', false)
 }
 const open = () => {
+  console.log(props.data)
   if (props.data) {
     setValues({
       goods_name: props.data.goods_name,
@@ -155,8 +156,7 @@ const delOldImg = (url) => {
       <div v-for="item in oldImg" :key="item">
         <div class="w-130px aspect-ratio-square m-4px border-rd-10px position-relative"
           ><img
-            :src="item"
-            alt=""
+            :src="'api' + item"
             class="h-full object-contain b b-coolgray b-solid aspect-ratio-square border-rd-10px"
           />
           <div

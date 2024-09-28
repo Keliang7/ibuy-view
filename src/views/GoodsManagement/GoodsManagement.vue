@@ -143,13 +143,13 @@ const handleSelectionChange = (selected: any[]) => {
     console.log(cancelData.value)
   }
 }
-watch(dataList, (newV) => {
-  temp.value.push(...newV.map((i) => i.ruleContent))
-  temp.value = [...new Set(temp.value)]
-  if (isCheckedAll.value && !newV.some((i) => selectedData.value.includes(i.ruleContent))) {
-    toggleSelection()
-  }
-})
+// watch(dataList, (newV) => {
+//   temp.value.push(...newV.map((i) => i.ruleContent))
+//   temp.value = [...new Set(temp.value)]
+//   if (isCheckedAll.value && !newV.some((i) => selectedData.value.includes(i.ruleContent))) {
+//     toggleSelection()
+//   }
+// })
 const clearSelection = async () => {
   const elTableRef = await getElTableExpose()
   elTableRef?.clearSelection()

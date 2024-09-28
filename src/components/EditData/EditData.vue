@@ -6,7 +6,7 @@ import { BaseButton } from '@/components/Button'
 import { useValidator } from '@/hooks/web/useValidator'
 import { ref, unref } from 'vue'
 import { ElMessage } from 'element-plus'
-import { addApi } from '@/api/userInfo'
+import { editApi } from '@/api/userInfo'
 import { ImageCropping } from '@/components/ImageCropping'
 const { required } = useValidator()
 const props = defineProps({
@@ -29,6 +29,14 @@ const props = defineProps({
 const { formRegister, formMethods } = useForm()
 const { getElFormExpose, getFormData, setValues } = formMethods
 const schema = ref<FormSchema[]>([
+  {
+    field: 'id',
+    label: 'id',
+    component: 'Input',
+    componentProps: {
+      disabled: true
+    }
+  },
   {
     field: 'account',
     label: '账号',
@@ -100,7 +108,6 @@ const schema = ref<FormSchema[]>([
 //抽屉打开关闭
 const emit = defineEmits(['update:isDrawer'])
 const close = async () => {
-  console.log('关闭弹窗')
   const elFormExpose = await getElFormExpose()
   elFormExpose?.resetFields()
   emit('update:isDrawer', false)
@@ -108,6 +115,7 @@ const close = async () => {
 const open = () => {
   if (props.editData) {
     setValues({
+      id: props.editData.id,
       account: props.editData.account,
       password: props.editData.password,
       tele: props.editData.tele,
@@ -116,6 +124,7 @@ const open = () => {
       avatar: props.editData.avatar
     })
   }
+  console.log(props.editData)
   console.log('打开')
 }
 // 重置
@@ -136,11 +145,11 @@ const confirmClick = async () => {
   elFormExpose?.validate(async (isValid) => {
     if (isValid) {
       const formData = await getFormData()
-      const res = await addApi({ avatar: base64, ...formData })
+      const res = await editApi({ avatar: base64, ...formData })
       console.log(formData)
       if (res.code == 0) {
         close()
-        ElMessage.success('添加信息成功')
+        ElMessage.success('修改信息成功')
       }
     }
   })

@@ -39,7 +39,7 @@ const columns: TableColumn[] = [
     label: 'id'
   },
   {
-    field: 'name',
+    field: 'type_name',
     label: '类别名称'
   },
   {

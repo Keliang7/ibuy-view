@@ -67,7 +67,8 @@ const columns: TableColumn[] = [
   {
     field: 'avatar',
     label: '用户头像',
-    class: 'h-50px'
+    class: 'h-50px',
+    width: 90
   },
   {
     field: 'email',
@@ -235,7 +236,7 @@ onMounted(async () => {})
       @selection-change="handleSelectionChange"
     />
   </ContentWrap>
-  <AddData v-model:isDrawer="isAddData" :title="'添加用户信息'" />
+  <AddData v-model:isDrawer="isAddData" :title="'添加用户信息'" @get-list="getList" />
   <EditData v-model:isDrawer="isEditData" :title="'修改用户信息'" :edit-data="editData" />
 </template>
 <style scoped></style>
